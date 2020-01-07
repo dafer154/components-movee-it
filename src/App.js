@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Header from "./components/Header/Header";
+import { Route, Switch } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Button from "./components/Button/Button";
+import InputNumber from "./components/InputNumber/InputNumber";
+import InputText from "./components/InputText/InputText";
+import SelectInput from "./components/SelectInput/SelectInput";
+import Autocomplete from "./components/Autocomplete/Autocomplete";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/button" component={Button} />
+          <Route path="/input-number" component={InputNumber} />
+          <Route path="/input-text" component={InputText} />
+          <Route path="/select-input" component={SelectInput} />
+          <Route path="/autocomplete" component={Autocomplete} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;

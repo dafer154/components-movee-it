@@ -1,0 +1,24 @@
+li{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    text-decoration: none;
+    background: #5D9CEC;
+    padding: 3%;
+    margin: auto;
+}
+
+body{
+
+}
