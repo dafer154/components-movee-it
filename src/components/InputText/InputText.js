@@ -3,7 +3,13 @@ import React, { Component } from "react";
 class InputText extends Component {
     state = {}
     render() {
-        return (<div>Input Text</div>);
+        return (
+            <div>
+                <div>Input Text</div>
+                <input type="text"></input>
+            </div>
+
+        );
     }
 }
 

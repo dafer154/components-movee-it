@@ -1,65 +1,113 @@
 import React, { Component } from "react";
-import ColorOption from "./ColorOptions";
+import RadioButtons from "../Options/RadioButton";
 
 class Button extends Component {
-    state = {
-        color: 'red',
-        text: 'Default',
-        size: '50%'
+    constructor(props) {
+        super(props);
+        this.state = {
+            properties: props,
+            styleButton: {
+                fontSize: props.style.fontSize,
+                color: props.style.color,
+                backgroundColor: props.style.backgroundColor,
+                padding: props.style.padding,
+                fontFamily: props.style.fontFamily,
+                width: props.style.width,
+                borderColor: props.style.borderColor,
+                borderRadius: props.style.borderRadius,
+                border: props.style.border,
+                fontWeight: props.style.fontWeight,
+                letterSpacing: props.style.letterSpacing,
+                textTransform: props.style.textTransform
+            },
+            valueLabel: props.valueLabel
+        };
     }
 
-    handleClickColor(color) {
-        this.setState({ color: color });
+    convertColorBorder(color) {
+        switch (color) {
+            case '#e3165b':
+                return '3px solid rgb(227, 27, 91)'
+                break;
+            case '#4d841d':
+                return '3px solid  rgb(77, 132, 29)'
+                break;
+            case '#0378d5':
+                return '3px solid rgb(3, 120, 213)'
+                break;
+            case '#c15700':
+                return '3px solid rgb(193, 87, 0)'
+                break;
+            case '#d64113':
+                return '3px solid rgb(214, 65, 19)'
+                break;
+            default:
+                break;
+        }
     }
 
-    handleClickSize(size) {
-        this.setState({ size: size.size });
-    }
+    callBackFunction = (childData, type, label) => {
+        switch (type) {
+            case 'color':
+                this.setState({
+                    styleButton: { ...this.state.styleButton, backgroundColor: childData },
+                    valueLabel: label
+                })
+                break;
+            case 'size':
+                return this.setState({
+                    styleButton: { ...this.state.styleButton, width: childData },
+                    valueLabel: label
+                });
+                break;
+            case 'textButton':
+                return this.setState({
+                    styleButton: { ...this.state.styleButton, color: childData },
+                    valueLabel: label
+                });
+            case 'outlineButton':
+                console.log("holi", childData);
+                return this.setState({
+                    styleButton: { ...this.state.styleButton, border: this.convertColorBorder(childData), color: childData },
+                    // styleButton: { ...this.state.styleButton, border: childData },
+                    valueLabel: label
+                });
+            default:
+                break;
+        }
 
-    colorOption() {
-        let colors = ['blue', 'red', 'black', 'yellow'];
-        return (
-            <div>
-                Just clicked Color
-                <ul>
-                    {colors.map(color =>
-                        <li key={color} style={{ color: color }} onClick={() => this.handleClickColor(color)}>
-                            {color}
-                        </li>
-                    )}
-                </ul>
-            </div>
-        )
+        this.setState({
+            styleChanged: { optionSelect: childData, type: type }
+        })
     }
-
-    sizeOptions() {
-        let sizes = [{ size: '25%', label: 'Small' }, { size: '60%', label: 'Medium' }, { size: '100%', label: 'Large' }];
-        return (
-            <div>
-                Just clicked sized
-        <ul>
-                    {sizes.map(size =>
-                        <li key={size} onClick={() => this.handleClickSize(size)}>
-                            {size.label}
-                        </li>
-                    )}
-                </ul>
-            </div>
-        );
-    }
-
 
     render() {
-        const style = {
-            color: this.state.color,
-            width: this.state.size
+        const mystyle = {
+            fontSize: `${this.state.styleButton.fontSize}`,
+            color: `${this.state.styleButton.color}`,
+            backgroundColor: `${this.state.styleButton.backgroundColor}`,
+            border: `${this.state.styleButton.border}`,
+            padding: "10px",
+            fontFamily: `${this.state.styleButton.fontFamily}`,
+            width: `${this.state.styleButton.width}`,
+            borderColor: `${this.state.styleButton.borderColor}`,
+            borderRadius: `${this.state.styleButton.borderRadius}`,
+            fontWeight: `${this.state.styleButton.fontWeight}`,
+            letterSpacing: `${this.state.styleButton.letterSpacing}`,
+            textTransform: `${this.state.styleButton.textTransform}`,
         }
+
         return (
             <div>
-                {this.colorOption()}
-                <button style={style}>Custom</button>
-                {this.sizeOptions()}
-                <button style={style}>Custom</button>
+                <div>{this.state.properties.title}</div>
+                <div>{this.state.properties.description}</div>
+                <button value="Hello" style={mystyle}>{this.state.valueLabel}</button>
+                <RadioButtons
+                    key={this.state.properties.option}
+                    options={this.state.properties.options}
+                    type={this.state.properties.option}
+                    changeOption={this.callBackFunction}
+                />
 
             </div>
         );

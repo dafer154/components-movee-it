@@ -3,7 +3,13 @@ import React, { Component } from "react";
 class InputNumber extends Component {
     state = {}
     render() {
-        return (<div>Input Number</div>);
+        return (
+            <div>
+                <div>Input Number</div>
+                <input type="number"></input>
+            </div>
+
+        );
     }
 }
 
