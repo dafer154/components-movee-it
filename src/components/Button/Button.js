@@ -24,26 +24,39 @@ class Button extends Component {
         };
     }
 
+    // convertColorBorder(color) {
+    //     switch (color) {
+    //         case '#e3165b':
+    //             return '3px solid rgb(227, 27, 91)'
+    //             break;
+    //         case '#4d841d':
+    //             return '3px solid  rgb(77, 132, 29)'
+    //             break;
+    //         case '#0378d5':
+    //             return '3px solid rgb(3, 120, 213)'
+    //             break;
+    //         case '#c15700':
+    //             return '3px solid rgb(193, 87, 0)'
+    //             break;
+    //         case '#d64113':
+    //             return '3px solid rgb(214, 65, 19)'
+    //             break;
+    //         default:
+    //             break;
+    //     }
+    // }
+
     convertColorBorder(color) {
-        switch (color) {
-            case '#e3165b':
-                return '3px solid rgb(227, 27, 91)'
-                break;
-            case '#4d841d':
-                return '3px solid  rgb(77, 132, 29)'
-                break;
-            case '#0378d5':
-                return '3px solid rgb(3, 120, 213)'
-                break;
-            case '#c15700':
-                return '3px solid rgb(193, 87, 0)'
-                break;
-            case '#d64113':
-                return '3px solid rgb(214, 65, 19)'
-                break;
-            default:
-                break;
+        const borderType = `3px solid`
+        const colorByContext = {
+            '#e3165b': `${borderType} rgb(227, 27, 91)`,
+            '#4d841d': `${borderType} rgb(77, 132, 29)`,
+            '#0378d5': `${borderType} rgb(3, 120, 213)`,
+            '#c15700': `${borderType} rgb(193, 87, 0)`,
+            '#d64113': `${borderType} rgb(214, 65, 19)`,
+            'default': `${borderType} rgb(227, 27, 91)`,
         }
+        return !!colorByContext[color] ? colorByContext[color] : colorByContext['default']
     }
 
     callBackFunction = (childData, type, label) => {

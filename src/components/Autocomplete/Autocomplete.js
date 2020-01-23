@@ -1,12 +1,19 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import './style/Autocomplete.css';
+
+
 
 class Autocomplete extends Component {
-    state = {}
+
+
     render() {
         return (
             <div>
                 <div>Autocomplete</div>
-                <input type="text"></input>
+                <input
+                    type="text"
+                />
             </div>
 
         );
