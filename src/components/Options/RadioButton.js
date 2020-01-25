@@ -5,7 +5,8 @@ class RadioButton extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedOption: props.options[0].option
+            selectedOption: props.options[0].option,
+            typeComponent: props.typeComponent
         };
     }
 
@@ -15,6 +16,7 @@ class RadioButton extends Component {
         })
         this.props.changeOption(event.target.value, this.props.type, label);
     }
+
 
     optionSize(options) {
         switch (options) {
@@ -32,32 +34,7 @@ class RadioButton extends Component {
     }
 
     render() {
-        // console.log('hola', this.props.type);
-        // return (
-        //     <div>
-        //         <div>
-        //             Just clicked
-        //         </div>
-        //         <div>
-        //             {this.props.options.map((option, i) => (
-        //                 <div key={i}>
-        //                     {this.props.type === 'size' ?
-        //                         <div>
-        //                             <input type="radio" onChange={this.sendOption} value={option} checked={this.state.selectedOption === option} />
-        //                             {this.optionSize(option)}
-        //                         </div>
-        //                         :
-        //                         <div>
-        //                             <input type="radio" onChange={this.sendOption} value={option} checked={this.state.selectedOption === option} />
-        //                             {option}
-        //                         </div>
-        //                     }
-        //                 </div>
-        //             ))}
-        //         </div>
-        //     </div>
 
-        // )
 
         return (
             <div>
@@ -65,14 +42,33 @@ class RadioButton extends Component {
                     Just clicked
                 </div>
                 <div>
-                    {this.props.options.map((option, i) => (
-                        <div key={i}>
-                            <div>
-                                <input type="radio" onChange={(evt) => this.sendOption(evt, option.name)} value={option.option} checked={this.state.selectedOption === option.option} />
-                                {option.name}
+                    {this.state.typeComponent === 'button' ?
+
+                        this.props.options.map((option, i) => (
+                            <div key={i}>
+                                <div>
+                                    <input type="radio" onChange={(evt) => this.sendOption(evt, option.name)} value={option.option} checked={this.state.selectedOption === option.option} />
+                                    {option.name}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        )) : this.state.typeComponent === 'inputText' ?
+                            this.props.options.map((option, i) => (
+                                <div key={i}>
+                                    <div>
+                                        <input type="radio" onChange={(evt) => this.sendOption(evt, option.name)} value={option.option} checked={this.state.selectedOption === option.option} />
+                                        {option.name}
+                                    </div>
+                                </div>
+                            )) : this.state.typeComponent === 'inputNumber' ?
+                                this.props.options.map((option, i) => (
+                                    <div key={i}>
+                                        <div>
+                                            <input type="radio" onChange={(evt) => this.sendOption(evt, option.name)} value={option.option} checked={this.state.selectedOption === option.option} />
+                                            {option.name}
+                                        </div>
+                                    </div>
+                                )) : 'jeje'
+                    }
                 </div>
             </div>
 

@@ -7,21 +7,21 @@ class InputNumber extends Component {
         super(props);
         this.state = {
             properties: props,
-            styleButton: {
-                fontSize: props.style.fontSize,
+            styleInput: {
+                font: props.style.font,
                 color: props.style.color,
-                backgroundColor: props.style.backgroundColor,
-                padding: props.style.padding,
-                fontFamily: props.style.fontFamily,
                 width: props.style.width,
-                borderColor: props.style.borderColor,
-                borderRadius: props.style.borderRadius,
-                border: props.style.border,
-                fontWeight: props.style.fontWeight,
-                letterSpacing: props.style.letterSpacing,
-                textTransform: props.style.textTransform
+                padding: props.style.padding,
+                background: props.style.background,
+                borderLeft: props.style.borderLeft,
+                borderRight: props.style.borderRight,
+                borderTop: props.style.borderTop,
+                borderBottom: props.style.borderBottom,
+                outline: props.style.outline,
+                borderRadius: props.style.borderRadius
             },
-            valueLabel: props.valueLabel
+            valueLabel: props.valueLabel,
+            disabled: props.disabled
         };
     }
 
@@ -31,32 +31,57 @@ class InputNumber extends Component {
         })
     }
 
+
+    convertColorBorder(color) {
+        const borderType = `1px solid`
+        const colorByContext = {
+            '#e3165b': `${borderType} rgb(227, 27, 91)`,
+            '#4d841d': `${borderType} rgb(77, 132, 29)`,
+            '#0378d5': `${borderType} rgb(3, 120, 213)`,
+            '#c15700': `${borderType} rgb(193, 87, 0)`,
+            '#d64113': `${borderType} rgb(214, 65, 19)`,
+            'default': `${borderType} rgb(227, 27, 91)`,
+        }
+        return !!colorByContext[color] ? colorByContext[color] : colorByContext['default']
+    }
+
     callBackFunction = (childData, type, label) => {
         switch (type) {
             case 'color':
                 this.setState({
-                    styleButton: { ...this.state.styleButton, backgroundColor: childData },
+                    styleInput: { ...this.state.styleInput, borderBottom: this.convertColorBorder(childData), color: childData },
                     valueLabel: label
                 })
                 break;
             case 'size':
                 return this.setState({
-                    styleButton: { ...this.state.styleButton, width: childData },
+                    styleInput: { ...this.state.styleInput, width: childData },
                     valueLabel: label
                 });
                 break;
             case 'textButton':
                 return this.setState({
-                    styleButton: { ...this.state.styleButton, color: childData },
+                    styleInput: { ...this.state.styleInput, color: childData },
                     valueLabel: label
                 });
+                break;
             case 'outlineButton':
                 console.log("holi", childData);
                 return this.setState({
-                    styleButton: { ...this.state.styleButton, border: this.convertColorBorder(childData), color: childData },
+                    styleInput: { ...this.state.styleInput, border: this.convertColorBorder(childData), color: childData },
                     // styleButton: { ...this.state.styleButton, border: childData },
                     valueLabel: label
                 });
+                break;
+            case 'types':
+                console.log("jujuj", label);
+                this.changeTypeInputNumber(label);
+                break;
+            case 'disabled':
+                console.log('boolean', childData);
+                const boolValue = JSON.parse(childData);
+                return this.setState({ disabled: boolValue });
+                break;
             default:
                 break;
         }
@@ -66,6 +91,31 @@ class InputNumber extends Component {
         })
     }
 
+    changeTypeInputNumber(labelOption) {
+        switch (labelOption) {
+            case 'Standard':
+                return this.setState({
+                    styleInput: { ...this.state.styleInput, borderBottom: '1px solid black', borderLeft: 'none', borderRight: 'none', borderTop: 'none', background: 'none', borderRadius: '0px' },
+                    valueLabel: labelOption
+                });
+                break;
+            case 'Filled':
+                return this.setState({
+                    styleInput: { ...this.state.styleInput, borderBottom: '1px solid black', borderLeft: 'none', borderRight: 'none', borderTop: 'none', background: '#e8e8e8', borderRadius: '0px' },
+                    valueLabel: labelOption
+                });
+                break;
+            case 'Outlined':
+                return this.setState({
+                    styleInput: { ...this.state.styleInput, borderBottom: '1px solid black', borderLeft: '1px solid black', borderRight: '1px solid black', borderTop: '1px solid black', background: 'none', borderRadius: '6px' },
+                    valueLabel: labelOption
+                });
+                break;
+            default:
+                break;
+        }
+    }
+
     render() {
 
         const {
@@ -73,29 +123,29 @@ class InputNumber extends Component {
         } = this;
 
         const mystyle = {
-            fontSize: `${this.state.styleButton.fontSize}`,
-            color: `${this.state.styleButton.color}`,
-            backgroundColor: `${this.state.styleButton.backgroundColor}`,
-            border: `${this.state.styleButton.border}`,
-            padding: "10px",
-            fontFamily: `${this.state.styleButton.fontFamily}`,
-            width: `${this.state.styleButton.width}`,
-            borderColor: `${this.state.styleButton.borderColor}`,
-            borderRadius: `${this.state.styleButton.borderRadius}`,
-            fontWeight: `${this.state.styleButton.fontWeight}`,
-            letterSpacing: `${this.state.styleButton.letterSpacing}`,
-            textTransform: `${this.state.styleButton.textTransform}`,
+            font: `${this.state.styleInput.font}`,
+            color: `${this.state.styleInput.color}`,
+            width: `${this.state.styleInput.width}`,
+            padding: `${this.state.styleInput.padding}`,
+            background: `${this.state.styleInput.background}`,
+            borderLeft: `${this.state.styleInput.borderLeft}`,
+            borderRight: `${this.state.styleInput.borderRight}`,
+            borderTop: `${this.state.styleInput.borderTop}`,
+            borderBottom: `${this.state.styleInput.borderBottom}`,
+            outline: `${this.state.styleInput.outline}`,
+            borderRadius: `${this.state.styleInput.borderRadius}`,
         }
         return (
             <div>
                 <div>{this.state.properties.title}</div>
                 <div>{this.state.properties.description}</div>
-                <input value={this.state.valueLabel} style={mystyle} onChange={onChange}></input>
+                <input disabled={this.state.disabled} type="number" style={mystyle} onChange={onChange} placeholder={this.state.valueLabel}></input>
                 <RadioButtons
                     key={this.state.properties.option}
                     options={this.state.properties.options}
                     type={this.state.properties.option}
                     changeOption={this.callBackFunction}
+                    typeComponent={this.state.properties.component}
                 />
             </div>
 

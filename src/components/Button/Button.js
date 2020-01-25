@@ -120,6 +120,7 @@ class Button extends Component {
                     options={this.state.properties.options}
                     type={this.state.properties.option}
                     changeOption={this.callBackFunction}
+                    typeComponent={this.state.properties.typeComponent}
                 />
 
             </div>
@@ -128,3 +129,70 @@ class Button extends Component {
 }
 
 export default Button;
+
+// import React, { useState } from "react";
+// import RadioButtons from "../Options/RadioButton";
+
+// export default function Button(props) {
+//     const { style = {}, valueLabel: propsValueLabel = '', title = '', description = '', option = '', options = [] } = { ...props }
+//     const { fontSize, color, backgroundColor, padding, fontFamily, width,
+//         borderColor, borderRadius, border, fontWeight, letterSpacing, textTransform } = style
+//     const [buttonStyle, setButtonStyle] = useState({
+//         fontSize, color, backgroundColor, padding, fontFamily,
+//         width, borderColor, borderRadius, border, fontWeight, letterSpacing, textTransform
+//     })
+//     const [valueLabel, setValueLabel] = useState(propsValueLabel)
+//     const convertColorBorder = (color) => {
+//         const borderType = `3px solid`
+//         const colorByContext = {
+//             '#e3165b': `${borderType} rgb(227, 27, 91)`,
+//             '#4d841d': `${borderType} rgb(77, 132, 29)`,
+//             '#0378d5': `${borderType} rgb(3, 120, 213)`,
+//             '#c15700': `${borderType} rgb(193, 87, 0)`,
+//             '#d64113': `${borderType} rgb(214, 65, 19)`,
+//             'default': `${borderType} rgb(227, 27, 91)`,
+//         }
+//         return !!colorByContext[color] ? colorByContext[color] : colorByContext['default']
+//     }
+
+//     const callBackFunction = (childData, type, label) => {
+//         const optionsByContext = {
+//             color: { buttonStyle: { ...buttonStyle, backgroundColor: childData }, valueLabel: label },
+//             size: { buttonStyle: { ...buttonStyle, width: childData }, valueLabel: label },
+//             textButton: { buttonStyle: { ...buttonStyle, color: childData }, valueLabel: label },
+//             outlineButton: { buttonStyle: { ...buttonStyle, border: convertColorBorder(childData) }, valueLabel: label },
+//             default: { buttonStyle: { ...buttonStyle }, valueLabel: '' }
+//         }
+//         setButtonStyle(!!optionsByContext[type] ? optionsByContext[type].buttonStyle : optionsByContext['default'].buttonStyle)
+//         setValueLabel(!!optionsByContext[type] ? optionsByContext[type].valueLabel : optionsByContext['default'].valueLabel)
+//     }
+
+//     const customStyle = {
+//         fontSize: `${buttonStyle.fontSize}`,
+//         color: `${buttonStyle.color}`,
+//         backgroundColor: `${buttonStyle.backgroundColor}`,
+//         border: `${buttonStyle.border}`,
+//         padding: '10px',
+//         fontFamily: `${buttonStyle.fontFamily}`,
+//         width: `${buttonStyle.width}`,
+//         borderColor: `${buttonStyle.borderColor}`,
+//         borderRadius: `${buttonStyle.borderRadius}`,
+//         fontWeight: `${buttonStyle.fontWeight}`,
+//         letterSpacing: `${buttonStyle.letterSpacing}`,
+//         textTransform: `${buttonStyle.textTransform}`,
+//     }
+//     return (
+//         <div>
+//             <div>{title}</div>
+//             <div>{description}</div>
+//             <button value="Hello" style={customStyle}>{valueLabel}</button>
+//             <RadioButtons
+//                 key={option}
+//                 options={options}
+//                 type={option}
+//                 changeOption={callBackFunction}
+//                 component={this.}
+//             />
+//         </div>
+//     )
+// }

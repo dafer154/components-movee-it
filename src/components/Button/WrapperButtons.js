@@ -6,6 +6,7 @@ class WrapperButtons extends Component {
     state = {
         treeButton: [{
             option: 'color',
+            typeComponent: 'button',
             title: 'Button styles',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             valueLabel: 'Primary',
@@ -54,6 +55,7 @@ class WrapperButtons extends Component {
         {
             option: 'textButton',
             title: 'Text Button',
+            typeComponent: 'button',
             description: 'loremIpsum',
             valueLabel: 'Primary',
             style: {
@@ -101,6 +103,7 @@ class WrapperButtons extends Component {
         {
             option: 'outlineButton',
             title: 'Outline Button',
+            typeComponent: 'button',
             description: 'loremIpsum',
             valueLabel: 'Primary',
             style: {
@@ -147,6 +150,7 @@ class WrapperButtons extends Component {
         {
             option: 'size',
             title: 'Size button',
+            typeComponent: 'button',
             description: 'loremIpsum',
             valueLabel: 'Normal',
             style: {
