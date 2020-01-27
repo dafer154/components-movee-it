@@ -1,0 +1,13 @@
+.titleRadio{
+    padding-top: 1%;
+}
+
+.wrapperRadio{
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.radioStyle{
+    padding: 1%;
+}

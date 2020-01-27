@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RadioButtons from "../Options/RadioButton";
+import './style/InputNumber.css';
 
 class InputNumber extends Component {
 
@@ -21,14 +22,33 @@ class InputNumber extends Component {
                 borderRadius: props.style.borderRadius
             },
             valueLabel: props.valueLabel,
-            disabled: props.disabled
+            disabled: props.disabled,
+            maxLength: props.maxLength,
+            step: props.step,
+            precision: props.precision
         };
     }
 
-    onChange = e => {
+    onChange = event => {
+
+        const { value, maxLength } = event.target;
+        console.log(maxLength);
+        const message = value.slice(0, maxLength);
+
+        // let val = event.target.value;
+        // val = val.replace(/ /gm, '');
+        // console.log(val);
+
+        // let num = `${val.substring(0, 3)} ${val.substring(3, 6)} ${val.substring(6, val.length)}`;
+
+
         this.setState({
-            valueLabel: e.target.value
-        })
+            valueLabel: message
+        });
+
+        // this.setState({
+        //     valueLabel: e.target.value
+        // })
     }
 
 
@@ -66,21 +86,23 @@ class InputNumber extends Component {
                 });
                 break;
             case 'outlineButton':
-                console.log("holi", childData);
                 return this.setState({
                     styleInput: { ...this.state.styleInput, border: this.convertColorBorder(childData), color: childData },
-                    // styleButton: { ...this.state.styleButton, border: childData },
                     valueLabel: label
                 });
                 break;
             case 'types':
-                console.log("jujuj", label);
                 this.changeTypeInputNumber(label);
                 break;
             case 'disabled':
-                console.log('boolean', childData);
                 const boolValue = JSON.parse(childData);
                 return this.setState({ disabled: boolValue });
+                break;
+            case 'maxLength':
+                return this.setState({
+                    maxLength: childData,
+                    valueLabel: label
+                });
                 break;
             default:
                 break;
@@ -117,7 +139,6 @@ class InputNumber extends Component {
     }
 
     render() {
-
         const {
             onChange,
         } = this;
@@ -136,19 +157,21 @@ class InputNumber extends Component {
             borderRadius: `${this.state.styleInput.borderRadius}`,
         }
         return (
-            <div>
-                <div>{this.state.properties.title}</div>
-                <div>{this.state.properties.description}</div>
-                <input disabled={this.state.disabled} type="number" style={mystyle} onChange={onChange} placeholder={this.state.valueLabel}></input>
-                <RadioButtons
+            <div className="container">
+                <div className="title">{this.state.properties.title}</div>
+                <div className="description">{this.state.properties.description}</div>
+                <div className="wrappInputNumber">
+                    <input disabled={this.state.disabled} type="number" format={'$'} style={mystyle} onChange={onChange} placeholder={this.state.valueLabel} step={this.state.step} precision={this.state.precision} value={this.state.valueLabel} maxLength={this.state.maxLength}></input>
+                </div>
+                {!!this.state.properties.options ? <RadioButtons
                     key={this.state.properties.option}
                     options={this.state.properties.options}
                     type={this.state.properties.option}
                     changeOption={this.callBackFunction}
                     typeComponent={this.state.properties.component}
-                />
-            </div>
+                /> : ''}
 
+            </div>
         );
     }
 }

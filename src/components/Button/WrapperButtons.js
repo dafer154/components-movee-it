@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Button from "./Button";
+import './style/WrapperButton.css'
 
 class WrapperButtons extends Component {
 
@@ -22,9 +23,7 @@ class WrapperButtons extends Component {
                 fontWeight: 'bold',
                 letterSpacing: '0.02857em',
                 textTransform: 'uppercase'
-
             },
-
             options: [
                 {
                     name: 'Primary',
@@ -47,9 +46,6 @@ class WrapperButtons extends Component {
                     option: '#d64113'
                 },
             ]
-            // options: [
-            //     '#e3165b', '#4d841d', '#0378d5', '#c15700', '#d64113'
-            // ]
         },
 
         {
@@ -95,9 +91,6 @@ class WrapperButtons extends Component {
                     option: '#d64113'
                 },
             ]
-            // options: [
-            //     '#e3165b', '#4d841d', '#0378d5', '#c15700', '#d64113'
-            // ]
         },
 
         {
@@ -119,7 +112,6 @@ class WrapperButtons extends Component {
                 letterSpacing: '0.02857em',
                 textTransform: 'uppercase'
             },
-
             options: [
                 {
                     name: 'Primary',
@@ -142,9 +134,6 @@ class WrapperButtons extends Component {
                     option: '#d64113'
                 },
             ]
-            // options: [
-            //     '#e3165b', '#4d841d', '#0378d5', '#c15700', '#d64113'
-            // ]
         },
 
         {
@@ -166,9 +155,6 @@ class WrapperButtons extends Component {
                 letterSpacing: '0.02857em',
                 textTransform: 'uppercase'
             },
-            // options: [
-            //     '50%', '30%', '70%', '100%'
-            // ]
             options: [
                 {
                     name: 'Normal',
@@ -188,33 +174,13 @@ class WrapperButtons extends Component {
                 }
             ]
         }
-            // ,
-            // {
-            //     option: 'outline',
-            //     title: 'Outline button',
-            //     description: 'loremIpsum',
-            //     valueLabel: 'Outline',
-            //     style: {
-            //         color: "white",
-            //         backgroundColor: "DodgerBlue",
-            //         borderColor: 'transparent',
-            //         padding: "10px",
-            //         fontFamily: "Arial",
-            //         width: "10%",
-            //         borderRadius: '12px'
-            //     },
-            //     options: [
-            //         'none'
-            //     ]
-            // }
         ]
     }
+
     render() {
-
-
         return (
             <div>
-                <div>Component Button</div>
+                <div className="titleComponent">Component Button</div>
                 {this.state.treeButton.map((button, i) => (
                     <Button
                         key={i}
@@ -222,7 +188,6 @@ class WrapperButtons extends Component {
                     />
                 ))}
             </div>
-
         );
     }
 }

@@ -136,10 +136,12 @@ class InputText extends Component {
             borderRadius: `${this.state.styleInput.borderRadius}`,
         }
         return (
-            <div>
-                <div>{this.state.properties.title}</div>
-                <div>{this.state.properties.description}</div>
-                <input disabled={this.state.disabled} style={mystyle} onChange={onChange} placeholder={this.state.valueLabel}></input>
+            <div className="container">
+                <div className="title">{this.state.properties.title}</div>
+                <div className="description">{this.state.properties.description}</div>
+                <div className="wrappInputText">
+                    <input disabled={this.state.disabled} style={mystyle} onChange={onChange} placeholder={this.state.valueLabel}></input>
+                </div>
                 <RadioButtons
                     key={this.state.properties.option}
                     options={this.state.properties.options}

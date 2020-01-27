@@ -2,6 +2,8 @@ li{
     list-style: none;
     text-decoration: none;
     color: white;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 a:hover, a:visited, a:link, a:active

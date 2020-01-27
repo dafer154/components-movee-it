@@ -1,0 +1,21 @@
+.container{
+    margin: 2%;
+    border: 1px black solid;
+    padding: 3%;
+    border-radius: 19px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.title{
+    font-size: 2em;
+}
+
+.description{
+    text-align: justify;
+    padding-top: 2%;
+}
+
+.wrappInputNumber{
+    padding-top: 2%;
+    padding-bottom: 1%;
+}

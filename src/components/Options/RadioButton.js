@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './RadioButton.css';
 
 class RadioButton extends Component {
 
@@ -38,14 +39,14 @@ class RadioButton extends Component {
 
         return (
             <div>
-                <div>
-                    Just clicked
+                <div className="titleRadio">
+                    Options
                 </div>
-                <div>
+                <div className="wrapperRadio">
                     {this.state.typeComponent === 'button' ?
 
                         this.props.options.map((option, i) => (
-                            <div key={i}>
+                            <div key={i} className="radioStyle">
                                 <div>
                                     <input type="radio" onChange={(evt) => this.sendOption(evt, option.name)} value={option.option} checked={this.state.selectedOption === option.option} />
                                     {option.name}
@@ -53,7 +54,7 @@ class RadioButton extends Component {
                             </div>
                         )) : this.state.typeComponent === 'inputText' ?
                             this.props.options.map((option, i) => (
-                                <div key={i}>
+                                <div key={i} className="radioStyle">
                                     <div>
                                         <input type="radio" onChange={(evt) => this.sendOption(evt, option.name)} value={option.option} checked={this.state.selectedOption === option.option} />
                                         {option.name}
@@ -61,13 +62,13 @@ class RadioButton extends Component {
                                 </div>
                             )) : this.state.typeComponent === 'inputNumber' ?
                                 this.props.options.map((option, i) => (
-                                    <div key={i}>
+                                    <div key={i} className="radioStyle">
                                         <div>
                                             <input type="radio" onChange={(evt) => this.sendOption(evt, option.name)} value={option.option} checked={this.state.selectedOption === option.option} />
                                             {option.name}
                                         </div>
                                     </div>
-                                )) : 'jeje'
+                                )) : ''
                     }
                 </div>
             </div>
