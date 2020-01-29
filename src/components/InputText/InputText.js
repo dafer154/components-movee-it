@@ -48,40 +48,30 @@ class InputText extends Component {
     callBackFunction = (childData, type, label) => {
         switch (type) {
             case 'color':
-                this.setState({
+                return this.setState({
                     styleInput: { ...this.state.styleInput, borderBottom: this.convertColorBorder(childData), color: childData },
                     valueLabel: label
                 })
-                break;
             case 'size':
                 return this.setState({
                     styleInput: { ...this.state.styleInput, width: childData },
                     valueLabel: label
                 });
-                break;
             case 'textButton':
                 return this.setState({
                     styleInput: { ...this.state.styleInput, color: childData },
                     valueLabel: label
                 });
-                break;
             case 'outlineButton':
-                console.log("holi", childData);
                 return this.setState({
                     styleInput: { ...this.state.styleInput, border: this.convertColorBorder(childData), color: childData },
-                    // styleButton: { ...this.state.styleButton, border: childData },
                     valueLabel: label
                 });
-                break;
             case 'types':
-                console.log("jujuj", label);
-                this.changeTypeInputText(label);
-                break;
+                return this.changeTypeInputText(label);
             case 'disabled':
-                console.log('boolean', childData);
                 const boolValue = JSON.parse(childData);
                 return this.setState({ disabled: boolValue });
-                break;
             default:
                 break;
         }
@@ -98,19 +88,16 @@ class InputText extends Component {
                     styleInput: { ...this.state.styleInput, borderBottom: '1px solid black', borderLeft: 'none', borderRight: 'none', borderTop: 'none', background: 'none', borderRadius: '0px' },
                     valueLabel: labelOption
                 });
-                break;
             case 'Filled':
                 return this.setState({
                     styleInput: { ...this.state.styleInput, borderBottom: '1px solid black', borderLeft: 'none', borderRight: 'none', borderTop: 'none', background: '#e8e8e8', borderRadius: '0px' },
                     valueLabel: labelOption
                 });
-                break;
             case 'Outlined':
                 return this.setState({
                     styleInput: { ...this.state.styleInput, borderBottom: '1px solid black', borderLeft: '1px solid black', borderRight: '1px solid black', borderTop: '1px solid black', background: 'none', borderRadius: '6px' },
                     valueLabel: labelOption
                 });
-                break;
             default:
                 break;
         }

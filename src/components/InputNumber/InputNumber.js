@@ -32,23 +32,11 @@ class InputNumber extends Component {
     onChange = event => {
 
         const { value, maxLength } = event.target;
-        console.log(maxLength);
         const message = value.slice(0, maxLength);
-
-        // let val = event.target.value;
-        // val = val.replace(/ /gm, '');
-        // console.log(val);
-
-        // let num = `${val.substring(0, 3)} ${val.substring(3, 6)} ${val.substring(6, val.length)}`;
-
 
         this.setState({
             valueLabel: message
         });
-
-        // this.setState({
-        //     valueLabel: e.target.value
-        // })
     }
 
 
@@ -68,42 +56,35 @@ class InputNumber extends Component {
     callBackFunction = (childData, type, label) => {
         switch (type) {
             case 'color':
-                this.setState({
+                return this.setState({
                     styleInput: { ...this.state.styleInput, borderBottom: this.convertColorBorder(childData), color: childData },
                     valueLabel: label
                 })
-                break;
             case 'size':
                 return this.setState({
                     styleInput: { ...this.state.styleInput, width: childData },
                     valueLabel: label
                 });
-                break;
             case 'textButton':
                 return this.setState({
                     styleInput: { ...this.state.styleInput, color: childData },
                     valueLabel: label
                 });
-                break;
             case 'outlineButton':
                 return this.setState({
                     styleInput: { ...this.state.styleInput, border: this.convertColorBorder(childData), color: childData },
                     valueLabel: label
                 });
-                break;
             case 'types':
-                this.changeTypeInputNumber(label);
-                break;
+                return this.changeTypeInputNumber(label);
             case 'disabled':
                 const boolValue = JSON.parse(childData);
                 return this.setState({ disabled: boolValue });
-                break;
             case 'maxLength':
                 return this.setState({
                     maxLength: childData,
                     valueLabel: label
                 });
-                break;
             default:
                 break;
         }
@@ -120,19 +101,16 @@ class InputNumber extends Component {
                     styleInput: { ...this.state.styleInput, borderBottom: '1px solid black', borderLeft: 'none', borderRight: 'none', borderTop: 'none', background: 'none', borderRadius: '0px' },
                     valueLabel: labelOption
                 });
-                break;
             case 'Filled':
                 return this.setState({
                     styleInput: { ...this.state.styleInput, borderBottom: '1px solid black', borderLeft: 'none', borderRight: 'none', borderTop: 'none', background: '#DFD3D3', borderRadius: '0px' },
                     valueLabel: labelOption
                 });
-                break;
             case 'Outlined':
                 return this.setState({
                     styleInput: { ...this.state.styleInput, borderBottom: '1px solid black', borderLeft: '1px solid black', borderRight: '1px solid black', borderTop: '1px solid black', background: 'none', borderRadius: '6px' },
                     valueLabel: labelOption
                 });
-                break;
             default:
                 break;
         }
@@ -161,7 +139,7 @@ class InputNumber extends Component {
                 <div className="title">{this.state.properties.title}</div>
                 <div className="description">{this.state.properties.description}</div>
                 <div className="wrappInputNumber">
-                    <input disabled={this.state.disabled} type="number" format={'$'} style={mystyle} onChange={onChange} placeholder={this.state.valueLabel} step={this.state.step} precision={this.state.precision} value={this.state.valueLabel} maxLength={this.state.maxLength}></input>
+                    <input disabled={this.state.disabled} type="number" style={mystyle} onChange={onChange} placeholder={this.state.valueLabel} step={this.state.step} precision={this.state.precision} value={this.state.valueLabel} maxLength={this.state.maxLength}></input>
                 </div>
                 {!!this.state.properties.options ? <RadioButtons
                     key={this.state.properties.option}

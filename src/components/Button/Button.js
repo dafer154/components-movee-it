@@ -41,24 +41,21 @@ class Button extends Component {
     callBackFunction = (childData, type, label) => {
         switch (type) {
             case 'color':
-                this.setState({
+                return this.setState({
                     styleButton: { ...this.state.styleButton, backgroundColor: childData },
                     valueLabel: label
                 })
-                break;
             case 'size':
                 return this.setState({
                     styleButton: { ...this.state.styleButton, width: childData },
                     valueLabel: label
                 });
-                break;
             case 'textButton':
                 return this.setState({
                     styleButton: { ...this.state.styleButton, color: childData },
                     valueLabel: label
                 });
             case 'outlineButton':
-                console.log("holi", childData);
                 return this.setState({
                     styleButton: { ...this.state.styleButton, border: this.convertColorBorder(childData), color: childData },
                     valueLabel: label

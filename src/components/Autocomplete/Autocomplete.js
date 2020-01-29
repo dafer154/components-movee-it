@@ -1,23 +1,24 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import './style/Autocomplete.css';
 
 
 
 class Autocomplete extends Component {
 
-    static propTypes = {
-        suggestions: PropTypes.instanceOf(Array)
-    };
+    // static propTypes = {
+    //     suggestions: PropTypes.instanceOf(Array)
+    // };
 
-    static defaultProps = {
-        suggestions: []
-    };
+    // static defaultProps = {
+    //     suggestions: []
+    // };
 
     constructor(props) {
         super(props);
 
         this.state = {
+            suggestions: props.suggestions,
             // The active selection's index
             activeSuggestion: 0,
             // The suggestions that match the user's input
@@ -31,11 +32,11 @@ class Autocomplete extends Component {
 
     // Event fired when the input value is changed
     onChange = e => {
-        const { suggestions } = this.props;
+        // const { suggestions } = this.props;
         const userInput = e.currentTarget.value;
 
         // Filter our suggestions that don't contain the user's input
-        const filteredSuggestions = suggestions.filter(
+        const filteredSuggestions = this.state.suggestions.filter(
             suggestion =>
                 suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
         );
@@ -76,7 +77,6 @@ class Autocomplete extends Component {
             onClick,
             onKeyDown,
             state: {
-                activeSuggestion,
                 filteredSuggestions,
                 showSuggestions,
                 userInput
@@ -88,7 +88,7 @@ class Autocomplete extends Component {
         if (showSuggestions && userInput) {
             if (filteredSuggestions.length) {
                 suggestionsListComponent = (
-                    <ul class="suggestions">
+                    <ul className="suggestions">
                         {filteredSuggestions.map((suggestion, index) => {
 
                             return (
@@ -104,7 +104,7 @@ class Autocomplete extends Component {
                 );
             } else {
                 suggestionsListComponent = (
-                    <div class="no-suggestions">
+                    <div className="no-suggestions">
                         <em>No suggestions, you're on your own!</em>
                     </div>
                 );

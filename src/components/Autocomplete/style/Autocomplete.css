@@ -52,6 +52,8 @@
   
   .suggestions li {
     padding: 0.5rem;
+    color:black;
+    cursor: pointer;
   }
   
   .suggestion-active {
