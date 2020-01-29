@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/components-movee-it/static/css/main.3ecbf0d6.chunk.css",
+    "main.js": "/components-movee-it/static/js/main.50e202f9.chunk.js",
+    "main.js.map": "/components-movee-it/static/js/main.50e202f9.chunk.js.map",
+    "runtime-main.js": "/components-movee-it/static/js/runtime-main.89140a4d.js",
+    "runtime-main.js.map": "/components-movee-it/static/js/runtime-main.89140a4d.js.map",
+    "static/js/2.91d812e8.chunk.js": "/components-movee-it/static/js/2.91d812e8.chunk.js",
+    "static/js/2.91d812e8.chunk.js.map": "/components-movee-it/static/js/2.91d812e8.chunk.js.map",
+    "index.html": "/components-movee-it/index.html",
+    "precache-manifest.d54a6270014c38912b38835407486d21.js": "/components-movee-it/precache-manifest.d54a6270014c38912b38835407486d21.js",
+    "service-worker.js": "/components-movee-it/service-worker.js",
+    "static/css/main.3ecbf0d6.chunk.css.map": "/components-movee-it/static/css/main.3ecbf0d6.chunk.css.map",
+    "static/js/2.91d812e8.chunk.js.LICENSE": "/components-movee-it/static/js/2.91d812e8.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.89140a4d.js",
+    "static/js/2.91d812e8.chunk.js",
+    "static/css/main.3ecbf0d6.chunk.css",
+    "static/js/main.50e202f9.chunk.js"
+  ]
+}
