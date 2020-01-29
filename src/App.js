@@ -27,7 +27,16 @@ class App extends Component {
           {/* <Route path="/input-text" component={InputText} /> */}
           <Route path="/input-text" component={WrapperInputText} />
           <Route path="/select-input" component={SelectInput} />
-          <Route path="/autocomplete" component={Autocomplete} />} />
+          <Route path="/autocomplete" render={(props) => <Autocomplete {...props} suggestions={["Alligator",
+            "Bask",
+            "Crocodilian",
+            "Death Roll",
+            "Eggs",
+            "Jaws",
+            "Reptile",
+            "Solitary",
+            "Tail",
+            "Wetlands"]} />} />
         </Switch>
       </div>
     );

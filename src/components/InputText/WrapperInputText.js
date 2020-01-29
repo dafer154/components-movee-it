@@ -6,7 +6,7 @@ class WrapperInputText extends Component {
     state = {
         treeTextButton: [{
             option: 'types',
-            title: 'Input Text types',
+            title: 'Input Text Types',
             component: 'inputText',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
@@ -76,7 +76,7 @@ class WrapperInputText extends Component {
         },
         {
             option: 'color',
-            title: 'Input Text color',
+            title: 'Input Text Color',
             component: 'inputText',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
@@ -121,7 +121,7 @@ class WrapperInputText extends Component {
         },
         {
             option: 'size',
-            title: 'Input Text size',
+            title: 'Input Text Size',
             component: 'inputText',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
@@ -166,7 +166,7 @@ class WrapperInputText extends Component {
     render() {
         return (
             <div>
-                <div className="titleComponent">Component Text Input</div>
+                <div className="titleComponent">Component Input Text</div>
                 {this.state.treeTextButton.map((inputText, i) => (
                     <InputText
                         key={i}

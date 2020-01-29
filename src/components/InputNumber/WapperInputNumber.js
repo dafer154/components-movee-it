@@ -6,7 +6,7 @@ class WrapperInputNumber extends Component {
     state = {
         treeTextButton: [{
             option: 'types',
-            title: 'Input Text types',
+            title: 'Input Number Types',
             component: 'inputNumber',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
@@ -36,7 +36,7 @@ class WrapperInputNumber extends Component {
                 },
                 {
                     name: 'Filled',
-                    option: '#e8e8e8'
+                    option: '#DFD3D3'
                 },
                 {
                     name: 'Outlined',
@@ -46,7 +46,7 @@ class WrapperInputNumber extends Component {
         },
         {
             option: 'disabled',
-            title: 'Input Text Disabled',
+            title: 'Input Number Disabled',
             component: 'inputNumber',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
@@ -82,7 +82,7 @@ class WrapperInputNumber extends Component {
         },
         {
             option: 'color',
-            title: 'Input Text color',
+            title: 'Input Number Color',
             component: 'inputNumber',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
@@ -130,7 +130,7 @@ class WrapperInputNumber extends Component {
         },
         {
             option: 'size',
-            title: 'Input Text size',
+            title: 'Input Number Size',
             component: 'inputNumber',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
@@ -174,7 +174,7 @@ class WrapperInputNumber extends Component {
         },
         {
             option: 'maxLength',
-            title: 'Input Text size',
+            title: 'Input Number MaxLength',
             component: 'inputNumber',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
@@ -212,7 +212,7 @@ class WrapperInputNumber extends Component {
         },
         {
             option: 'float',
-            title: 'Input Text float',
+            title: 'Input Number Float',
             component: 'inputNumber',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',

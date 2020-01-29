@@ -138,7 +138,7 @@ class WrapperButtons extends Component {
 
         {
             option: 'size',
-            title: 'Size button',
+            title: 'Size Button',
             typeComponent: 'button',
             description: 'loremIpsum',
             valueLabel: 'Normal',
