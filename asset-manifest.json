@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/components-movee-it/static/css/main.3ecbf0d6.chunk.css",
-    "main.js": "/components-movee-it/static/js/main.50e202f9.chunk.js",
-    "main.js.map": "/components-movee-it/static/js/main.50e202f9.chunk.js.map",
+    "main.js": "/components-movee-it/static/js/main.80a630cf.chunk.js",
+    "main.js.map": "/components-movee-it/static/js/main.80a630cf.chunk.js.map",
     "runtime-main.js": "/components-movee-it/static/js/runtime-main.89140a4d.js",
     "runtime-main.js.map": "/components-movee-it/static/js/runtime-main.89140a4d.js.map",
-    "static/js/2.91d812e8.chunk.js": "/components-movee-it/static/js/2.91d812e8.chunk.js",
-    "static/js/2.91d812e8.chunk.js.map": "/components-movee-it/static/js/2.91d812e8.chunk.js.map",
+    "static/js/2.41168a09.chunk.js": "/components-movee-it/static/js/2.41168a09.chunk.js",
+    "static/js/2.41168a09.chunk.js.map": "/components-movee-it/static/js/2.41168a09.chunk.js.map",
     "index.html": "/components-movee-it/index.html",
-    "precache-manifest.d54a6270014c38912b38835407486d21.js": "/components-movee-it/precache-manifest.d54a6270014c38912b38835407486d21.js",
+    "precache-manifest.bcae8307b88387508a16ed10b45f35ce.js": "/components-movee-it/precache-manifest.bcae8307b88387508a16ed10b45f35ce.js",
     "service-worker.js": "/components-movee-it/service-worker.js",
     "static/css/main.3ecbf0d6.chunk.css.map": "/components-movee-it/static/css/main.3ecbf0d6.chunk.css.map",
-    "static/js/2.91d812e8.chunk.js.LICENSE": "/components-movee-it/static/js/2.91d812e8.chunk.js.LICENSE"
+    "static/js/2.41168a09.chunk.js.LICENSE": "/components-movee-it/static/js/2.41168a09.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.89140a4d.js",
-    "static/js/2.91d812e8.chunk.js",
+    "static/js/2.41168a09.chunk.js",
     "static/css/main.3ecbf0d6.chunk.css",
-    "static/js/main.50e202f9.chunk.js"
+    "static/js/main.80a630cf.chunk.js"
   ]
 }
