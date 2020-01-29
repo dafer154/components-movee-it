@@ -90,7 +90,7 @@ class InputText extends Component {
                 });
             case 'Filled':
                 return this.setState({
-                    styleInput: { ...this.state.styleInput, borderBottom: '1px solid black', borderLeft: 'none', borderRight: 'none', borderTop: 'none', background: '#e8e8e8', borderRadius: '0px' },
+                    styleInput: { ...this.state.styleInput, borderBottom: '1px solid black', borderLeft: 'none', borderRight: 'none', borderTop: 'none', background: '#DFD3D3', borderRadius: '0px' },
                     valueLabel: labelOption
                 });
             case 'Outlined':
