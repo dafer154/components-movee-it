@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import InputNumber from "./InputNumber";
+import CustomInput from "../CustomInput/CustomInput";
 
 class WrapperInputNumber extends Component {
 
@@ -8,6 +8,7 @@ class WrapperInputNumber extends Component {
             option: 'types',
             title: 'Input Number Types',
             component: 'inputNumber',
+            typeInput: 'number',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
             valueLabel: 'Standard',
@@ -18,7 +19,7 @@ class WrapperInputNumber extends Component {
             style: {
                 font: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
                 color: 'none',
-                width: '30%',
+                width: '25%',
                 padding: '6px 11px 7px',
                 background: 'none',
                 outline: 'none',
@@ -48,6 +49,7 @@ class WrapperInputNumber extends Component {
             option: 'disabled',
             title: 'Input Number Disabled',
             component: 'inputNumber',
+            typeInput: 'number',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
             valueLabel: 'Standard',
@@ -58,7 +60,7 @@ class WrapperInputNumber extends Component {
             style: {
                 font: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
                 color: 'none',
-                width: '30%',
+                width: '25%',
                 padding: '6px 11px 7px',
                 background: 'none',
                 outline: 'none',
@@ -84,6 +86,7 @@ class WrapperInputNumber extends Component {
             option: 'color',
             title: 'Input Number Color',
             component: 'inputNumber',
+            typeInput: 'number',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
             valueLabel: 'Standard',
@@ -94,7 +97,7 @@ class WrapperInputNumber extends Component {
             style: {
                 font: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
                 color: 'none',
-                width: '30%',
+                width: '25%',
                 padding: '6px 11px 7px',
                 background: 'none',
                 outline: 'none',
@@ -132,6 +135,7 @@ class WrapperInputNumber extends Component {
             option: 'size',
             title: 'Input Number Size',
             component: 'inputNumber',
+            typeInput: 'number',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
             valueLabel: 'Standard',
@@ -142,7 +146,7 @@ class WrapperInputNumber extends Component {
             style: {
                 font: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
                 color: 'none',
-                width: '30%',
+                width: '25%',
                 padding: '6px 11px 7px',
                 background: 'none',
                 outline: 'none',
@@ -156,15 +160,15 @@ class WrapperInputNumber extends Component {
             options: [
                 {
                     name: 'Normal',
-                    option: '50%',
+                    option: '25%',
                 },
                 {
                     name: 'Small',
-                    option: '30%',
+                    option: '12%',
                 },
                 {
                     name: 'Medium',
-                    option: '70%',
+                    option: '75%',
                 },
                 {
                     name: 'Large',
@@ -176,6 +180,7 @@ class WrapperInputNumber extends Component {
             option: 'maxLength',
             title: 'Input Number MaxLength',
             component: 'inputNumber',
+            typeInput: 'number',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
             valueLabel: 'Standard',
@@ -184,7 +189,7 @@ class WrapperInputNumber extends Component {
             style: {
                 font: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
                 color: 'none',
-                width: '30%',
+                width: '25%',
                 padding: '6px 11px 7px',
                 background: 'none',
                 outline: 'none',
@@ -214,6 +219,7 @@ class WrapperInputNumber extends Component {
             option: 'float',
             title: 'Input Number Float',
             component: 'inputNumber',
+            typeInput: 'number',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             placeholder: 'Standard',
             valueLabel: 'Standard',
@@ -224,7 +230,7 @@ class WrapperInputNumber extends Component {
             style: {
                 font: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
                 color: 'none',
-                width: '30%',
+                width: '25%',
                 padding: '6px 11px 7px',
                 background: 'none',
                 outline: 'none',
@@ -243,7 +249,7 @@ class WrapperInputNumber extends Component {
             <div>
                 <div className="titleComponent">Component Input Number</div>
                 {this.state.treeTextButton.map((inputText, i) => (
-                    <InputNumber
+                    <CustomInput
                         key={i}
                         {...inputText}
                     />

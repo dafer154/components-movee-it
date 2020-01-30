@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import InputText from "./InputText";
+import CustomInput from "../CustomInput/CustomInput";
 
 class WrapperInputText extends Component {
 
@@ -15,7 +15,7 @@ class WrapperInputText extends Component {
             style: {
                 font: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
                 color: 'none',
-                width: '30%',
+                width: '25%',
                 padding: '6px 11px 7px',
                 background: 'none',
                 outline: 'none',
@@ -52,7 +52,7 @@ class WrapperInputText extends Component {
             style: {
                 font: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
                 color: 'none',
-                width: '30%',
+                width: '25%',
                 padding: '6px 11px 7px',
                 background: 'none',
                 outline: 'none',
@@ -85,7 +85,7 @@ class WrapperInputText extends Component {
             style: {
                 font: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
                 color: 'none',
-                width: '30%',
+                width: '25%',
                 padding: '6px 11px 7px',
                 background: 'none',
                 outline: 'none',
@@ -130,7 +130,7 @@ class WrapperInputText extends Component {
             style: {
                 font: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
                 color: 'none',
-                width: '30%',
+                width: '25%',
                 padding: '6px 11px 7px',
                 background: 'none',
                 outline: 'none',
@@ -144,15 +144,15 @@ class WrapperInputText extends Component {
             options: [
                 {
                     name: 'Normal',
-                    option: '50%',
+                    option: '25%',
                 },
                 {
                     name: 'Small',
-                    option: '30%',
+                    option: '12%',
                 },
                 {
                     name: 'Medium',
-                    option: '70%',
+                    option: '75%',
                 },
                 {
                     name: 'Large',
@@ -168,7 +168,7 @@ class WrapperInputText extends Component {
             <div>
                 <div className="titleComponent">Component Input Text</div>
                 {this.state.treeTextButton.map((inputText, i) => (
-                    <InputText
+                    <CustomInput
                         key={i}
                         {...inputText}
                     />

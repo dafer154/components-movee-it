@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import RadioButtons from "../Options/RadioButton";
+import './style/CustomInput.css';
+import { convertColorBorder } from '../Utils';
 
-class InputText extends Component {
+class CustomInput extends Component {
 
     constructor(props) {
         super(props);
@@ -21,35 +23,27 @@ class InputText extends Component {
                 borderRadius: props.style.borderRadius
             },
             valueLabel: props.valueLabel,
-            disabled: props.disabled
+            disabled: props.disabled,
+            maxLength: props.maxLength,
+            step: props.step,
+            precision: props.precision,
+            typeInput: props.typeInput
         };
     }
 
-    onChange = e => {
+    onChange = event => {
+        const { value, maxLength } = event.target;
+        const message = value.slice(0, maxLength);
         this.setState({
-            valueLabel: e.target.value
-        })
-    }
-
-
-    convertColorBorder(color) {
-        const borderType = `1px solid`
-        const colorByContext = {
-            '#e3165b': `${borderType} rgb(227, 27, 91)`,
-            '#4d841d': `${borderType} rgb(77, 132, 29)`,
-            '#0378d5': `${borderType} rgb(3, 120, 213)`,
-            '#c15700': `${borderType} rgb(193, 87, 0)`,
-            '#d64113': `${borderType} rgb(214, 65, 19)`,
-            'default': `${borderType} rgb(227, 27, 91)`,
-        }
-        return !!colorByContext[color] ? colorByContext[color] : colorByContext['default']
+            valueLabel: message
+        });
     }
 
     callBackFunction = (childData, type, label) => {
         switch (type) {
             case 'color':
                 return this.setState({
-                    styleInput: { ...this.state.styleInput, borderBottom: this.convertColorBorder(childData), color: childData },
+                    styleInput: { ...this.state.styleInput, borderBottom: convertColorBorder(childData), color: childData },
                     valueLabel: label
                 })
             case 'size':
@@ -68,10 +62,15 @@ class InputText extends Component {
                     valueLabel: label
                 });
             case 'types':
-                return this.changeTypeInputText(label);
+                return this.changeTypeInputNumber(label);
             case 'disabled':
                 const boolValue = JSON.parse(childData);
                 return this.setState({ disabled: boolValue });
+            case 'maxLength':
+                return this.setState({
+                    maxLength: childData,
+                    valueLabel: label
+                });
             default:
                 break;
         }
@@ -81,7 +80,7 @@ class InputText extends Component {
         })
     }
 
-    changeTypeInputText(labelOption) {
+    changeTypeInputNumber(labelOption) {
         switch (labelOption) {
             case 'Standard':
                 return this.setState({
@@ -104,9 +103,9 @@ class InputText extends Component {
     }
 
     render() {
-
         const {
             onChange,
+            callBackFunction
         } = this;
 
         const mystyle = {
@@ -122,24 +121,45 @@ class InputText extends Component {
             outline: `${this.state.styleInput.outline}`,
             borderRadius: `${this.state.styleInput.borderRadius}`,
         }
+        const { title, description, options, option, component } = this.state.properties
+        const { disabled, valueLabel, step, precision, maxLength, typeInput } = this.state
         return (
-            <div className="container">
-                <div className="title">{this.state.properties.title}</div>
-                <div className="description">{this.state.properties.description}</div>
-                <div className="wrappInputText">
-                    <input disabled={this.state.disabled} style={mystyle} onChange={onChange} placeholder={this.state.valueLabel}></input>
-                </div>
-                <RadioButtons
-                    key={this.state.properties.option}
-                    options={this.state.properties.options}
-                    type={this.state.properties.option}
-                    changeOption={this.callBackFunction}
-                    typeComponent={this.state.properties.component}
-                />
-            </div>
 
+            <div>
+                {this.state.typeInput === 'number' ?
+                    <div className="container">
+                        <div className="title">{title}</div>
+                        <div className="description">{description}</div>
+                        <div className="wrappInputNumber">
+                            <input disabled={disabled} type={typeInput} style={mystyle} onChange={onChange} placeholder={valueLabel} step={step} precision={precision} value={valueLabel} maxLength={maxLength}></input>
+                        </div>
+                        {!!options ? <RadioButtons
+                            key={option}
+                            options={options}
+                            type={option}
+                            changeOption={callBackFunction}
+                            typeComponent={component}
+                        /> : ''}
+
+                    </div> :
+                    <div className="container">
+                        <div className="title">{title}</div>
+                        <div className="description">{description}</div>
+                        <div className="wrappInputText">
+                            <input disabled={disabled} type={typeInput} style={mystyle} onChange={onChange} placeholder={valueLabel}></input>
+                        </div>
+                        <RadioButtons
+                            key={option}
+                            options={options}
+                            type={option}
+                            changeOption={callBackFunction}
+                            typeComponent={component}
+                        />
+                    </div>
+                }
+            </div>
         );
     }
 }
 
-export default InputText;
+export default CustomInput;

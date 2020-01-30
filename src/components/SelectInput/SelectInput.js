@@ -1,19 +1,44 @@
 import React, { Component } from "react";
+import './style/SelectInput.css';
 
 class SelectInput extends Component {
-    state = {}
+    constructor(props) {
+        super(props);
+        this.state = {
+            properties: props,
+            styleButton: {
+                fontSize: props.style.fontSize,
+                color: props.style.color,
+                backgroundColor: props.style.backgroundColor,
+                padding: props.style.padding,
+                fontFamily: props.style.fontFamily,
+                width: props.style.width,
+                borderColor: props.style.borderColor,
+                borderRadius: props.style.borderRadius,
+                border: props.style.border,
+                fontWeight: props.style.fontWeight,
+                letterSpacing: props.style.letterSpacing,
+                textTransform: props.style.textTransform
+            },
+            valueLabel: props.valueLabel,
+            optionsSelect: props.optionsSelect
+        };
+    }
+
+
+    renderOptions() {
+        this.state.optionsSelect.map((option, i) => {
+            console.log("Car", option)
+            return <option key={i} value={option}>{option}</option>
+        })
+    }
+
     render() {
         return (
             <div>
                 <div>Select Input</div>
-                <select size={2}>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                    <option value="david">David</option>
-                    <option value="ana">Ana</option>
-                    <option value="andres">Andres</option>
+                <select>
+                    {this.renderOptions}
                 </select>
             </div>
 
