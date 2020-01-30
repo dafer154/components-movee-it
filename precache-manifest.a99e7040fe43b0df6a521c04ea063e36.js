@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ba30c89a22f63951049f041b94f94ef0",
+    "revision": "d1dba564f08a134fcad055e1b7f44609",
     "url": "/components-movee-it/index.html"
   },
   {
-    "revision": "2627c2163b7ee69c2171",
+    "revision": "28b3c96de92e308dbb7b",
     "url": "/components-movee-it/static/css/main.c6dd1c73.chunk.css"
   },
   {
-    "revision": "af6e9dd9393181714c59",
-    "url": "/components-movee-it/static/js/2.be90da71.chunk.js"
+    "revision": "289345b93b5da77bc276",
+    "url": "/components-movee-it/static/js/2.303e937a.chunk.js"
   },
   {
     "revision": "e928fe768baa9832b5bc57eae021f30c",
-    "url": "/components-movee-it/static/js/2.be90da71.chunk.js.LICENSE"
+    "url": "/components-movee-it/static/js/2.303e937a.chunk.js.LICENSE"
   },
   {
-    "revision": "2627c2163b7ee69c2171",
-    "url": "/components-movee-it/static/js/main.cc63e1d5.chunk.js"
+    "revision": "28b3c96de92e308dbb7b",
+    "url": "/components-movee-it/static/js/main.1e6bc7b2.chunk.js"
   },
   {
     "revision": "9efe706fe8b63937b247",
