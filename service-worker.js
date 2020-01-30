@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/components-movee-it/precache-manifest.bcae8307b88387508a16ed10b45f35ce.js"
+  "/components-movee-it/precache-manifest.dbd04fa4ab538002e21f7e3df24844f6.js"
 );
 
 self.addEventListener('message', (event) => {
