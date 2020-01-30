@@ -51,10 +51,6 @@ class Button extends Component {
             default:
                 break;
         }
-
-        this.setState({
-            styleChanged: { optionSelect: childData, type: type }
-        })
     }
 
     render() {
@@ -73,19 +69,23 @@ class Button extends Component {
             textTransform: `${this.state.styleButton.textTransform}`,
         }
 
+        const { callBackFunction } = this
+        const { title, description, option, options, typeComponent } = this.state.properties
+        const { valueLabel } = this.state
+
         return (
             <div className="container">
-                <div className="title">{this.state.properties.title}</div>
-                <div className="description">{this.state.properties.description}</div>
+                <div className="title">{title}</div>
+                <div className="description">{description}</div>
                 <div className="wrappButton">
-                    <button value="Hello" style={mystyle}>{this.state.valueLabel}</button>
+                    <button value="Hello" style={mystyle}>{valueLabel}</button>
                 </div>
                 <RadioButtons
-                    key={this.state.properties.option}
-                    options={this.state.properties.options}
-                    type={this.state.properties.option}
-                    changeOption={this.callBackFunction}
-                    typeComponent={this.state.properties.typeComponent}
+                    key={option}
+                    options={options}
+                    type={option}
+                    changeOption={callBackFunction}
+                    typeComponent={typeComponent}
                 />
             </div>
         );

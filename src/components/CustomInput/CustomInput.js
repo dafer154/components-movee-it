@@ -74,10 +74,6 @@ class CustomInput extends Component {
             default:
                 break;
         }
-
-        this.setState({
-            styleChanged: { optionSelect: childData, type: type }
-        })
     }
 
     changeTypeInputNumber(labelOption) {

@@ -25,23 +25,40 @@ class SelectInput extends Component {
         };
     }
 
-
-    renderOptions() {
-        this.state.optionsSelect.map((option, i) => {
-            console.log("Car", option)
-            return <option key={i} value={option}>{option}</option>
-        })
-    }
-
     render() {
+
+        const mystyle = {
+            fontSize: `${this.state.styleButton.fontSize}`,
+            color: `${this.state.styleButton.color}`,
+            backgroundColor: `${this.state.styleButton.backgroundColor}`,
+            border: `${this.state.styleButton.border}`,
+            padding: "10px",
+            fontFamily: `${this.state.styleButton.fontFamily}`,
+            width: `${this.state.styleButton.width}`,
+            borderColor: `${this.state.styleButton.borderColor}`,
+            borderRadius: `${this.state.styleButton.borderRadius}`,
+            fontWeight: `${this.state.styleButton.fontWeight}`,
+            letterSpacing: `${this.state.styleButton.letterSpacing}`,
+            textTransform: `${this.state.styleButton.textTransform}`,
+        }
+
+        const { optionsSelect } = this.state
+        const { title, description, option, options, typeComponent } = this.state.properties
+
         return (
             <div>
-                <div>Select Input</div>
-                <select>
-                    {this.renderOptions}
-                </select>
+                <div className="container">
+                    <div className="title">{title}</div>
+                    <div className="description">{description}</div>
+                    <div className="wrappButton">
+                        <select style={mystyle}>
+                            {optionsSelect.map((option, i) => {
+                                return <option key={i} value={option}>{option}</option>
+                            })}
+                        </select>
+                    </div>
+                </div>
             </div>
-
         );
     }
 }

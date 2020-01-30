@@ -18,24 +18,9 @@ class RadioButton extends Component {
         this.props.changeOption(event.target.value, this.props.type, label);
     }
 
-
-    optionSize(options) {
-        switch (options) {
-            case '50%':
-                return 'Normal'
-            case '30%':
-                return 'Small'
-            case '70%':
-                return 'Medium'
-            case '100%':
-                return 'Large'
-            default:
-                break;
-        }
-    }
-
     render() {
-
+        const { typeComponent, selectedOption } = this.state
+        const { sendOption } = this
 
         return (
             <div>
@@ -43,20 +28,20 @@ class RadioButton extends Component {
                     Options
                 </div>
                 <div className="wrapperRadio">
-                    {this.state.typeComponent === 'button' ?
+                    {typeComponent === 'button' ?
 
                         this.props.options.map((option, i) => (
                             <div key={i} className="radioStyle">
                                 <div>
-                                    <input type="radio" onChange={(evt) => this.sendOption(evt, option.name)} value={option.option} checked={this.state.selectedOption === option.option} />
+                                    <input type="radio" onChange={(evt) => sendOption(evt, option.name)} value={option.option} checked={selectedOption === option.option} />
                                     {option.name}
                                 </div>
                             </div>
-                        )) : this.state.typeComponent === 'inputText' ?
+                        )) : typeComponent === 'inputText' ?
                             this.props.options.map((option, i) => (
                                 <div key={i} className="radioStyle">
                                     <div>
-                                        <input type="radio" onChange={(evt) => this.sendOption(evt, option.name)} value={option.option} checked={this.state.selectedOption === option.option} />
+                                        <input type="radio" onChange={(evt) => sendOption(evt, option.name)} value={option.option} checked={selectedOption === option.option} />
                                         {option.name}
                                     </div>
                                 </div>
@@ -64,7 +49,7 @@ class RadioButton extends Component {
                                 this.props.options.map((option, i) => (
                                     <div key={i} className="radioStyle">
                                         <div>
-                                            <input type="radio" onChange={(evt) => this.sendOption(evt, option.name)} value={option.option} checked={this.state.selectedOption === option.option} />
+                                            <input type="radio" onChange={(evt) => sendOption(evt, option.name)} value={option.option} checked={selectedOption === option.option} />
                                             {option.name}
                                         </div>
                                     </div>
