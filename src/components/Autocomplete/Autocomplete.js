@@ -1,48 +1,27 @@
 import React, { Component } from "react";
-// import PropTypes from "prop-types";
 import './style/Autocomplete.css';
 
-
-
 class Autocomplete extends Component {
-
-    // static propTypes = {
-    //     suggestions: PropTypes.instanceOf(Array)
-    // };
-
-    // static defaultProps = {
-    //     suggestions: []
-    // };
 
     constructor(props) {
         super(props);
 
         this.state = {
             suggestions: props.suggestions,
-            // The active selection's index
             activeSuggestion: 0,
-            // The suggestions that match the user's input
             filteredSuggestions: [],
-            // Whether or not the suggestion list is shown
             showSuggestions: false,
-            // What the user has entered
             userInput: ""
         };
     }
 
-    // Event fired when the input value is changed
     onChange = e => {
-        // const { suggestions } = this.props;
         const userInput = e.currentTarget.value;
-
-        // Filter our suggestions that don't contain the user's input
         const filteredSuggestions = this.state.suggestions.filter(
             suggestion =>
                 suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
         );
 
-        // Update the user input and filtered suggestions, reset the active
-        // suggestion and make sure the suggestions are shown
         this.setState({
             activeSuggestion: 0,
             filteredSuggestions,

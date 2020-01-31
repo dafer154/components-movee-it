@@ -64,8 +64,11 @@ class CustomInput extends Component {
             case 'types':
                 return this.changeTypeInputNumber(label);
             case 'disabled':
-                const boolValue = JSON.parse(childData);
-                return this.setState({ disabled: boolValue });
+                if (childData === "Available") {
+                    return this.setState({ disabled: false });
+                } else {
+                    return this.setState({ disabled: true });
+                }
             case 'maxLength':
                 return this.setState({
                     maxLength: childData,
@@ -119,6 +122,7 @@ class CustomInput extends Component {
         }
         const { title, description, options, option, component } = this.state.properties
         const { disabled, valueLabel, step, precision, maxLength, typeInput } = this.state
+
         return (
 
             <div>

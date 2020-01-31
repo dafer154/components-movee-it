@@ -21,7 +21,9 @@ class Button extends Component {
                 border: props.style.border,
                 fontWeight: props.style.fontWeight,
                 letterSpacing: props.style.letterSpacing,
-                textTransform: props.style.textTransform
+                textTransform: props.style.textTransform,
+                outline: props.style.outline,
+                cursor: props.style.cursor
             },
             valueLabel: props.valueLabel
         };
@@ -60,7 +62,7 @@ class Button extends Component {
             color: `${this.state.styleButton.color}`,
             backgroundColor: `${this.state.styleButton.backgroundColor}`,
             border: `${this.state.styleButton.border}`,
-            padding: "10px",
+            padding: `${this.state.styleButton.padding}`,
             fontFamily: `${this.state.styleButton.fontFamily}`,
             width: `${this.state.styleButton.width}`,
             borderColor: `${this.state.styleButton.borderColor}`,
@@ -68,6 +70,8 @@ class Button extends Component {
             fontWeight: `${this.state.styleButton.fontWeight}`,
             letterSpacing: `${this.state.styleButton.letterSpacing}`,
             textTransform: `${this.state.styleButton.textTransform}`,
+            outline: `${this.state.styleButton.outline}`,
+            cursor: `${this.state.styleButton.cursor}`,
         }
 
         const { callBackFunction } = this

@@ -8,7 +8,7 @@ class WrapperSelect extends Component {
         treeSelect: [{
             option: 'color',
             typeComponent: 'select',
-            title: 'Button styles',
+            title: 'Styles Select Input',
             description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
             valueLabel: 'Primary',
             style: {
@@ -16,13 +16,15 @@ class WrapperSelect extends Component {
                 backgroundColor: "#e3165b",
                 padding: '5px 15px',
                 fontFamily: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
-                width: "12%",
+                width: "25%",
                 borderColor: 'transparent',
                 color: '#fff',
                 borderRadius: '4px',
                 fontWeight: 'bold',
                 letterSpacing: '0.02857em',
-                textTransform: 'uppercase'
+                textTransform: 'uppercase',
+                outline: 'none',
+                cursor: 'pointer'
             },
             optionsSelect: ['Bmw', 'Audi', 'Ferrari', 'Volskwagen', 'Mazda', 'Toyota', 'Nissan', 'Porshe'],
             options: [
@@ -51,8 +53,8 @@ class WrapperSelect extends Component {
 
         {
             option: 'size',
-            title: 'Size Button',
-            typeComponent: 'button',
+            title: 'Size Select Input',
+            typeComponent: 'select',
             description: 'loremIpsum',
             valueLabel: 'Normal',
             style: {
@@ -62,25 +64,27 @@ class WrapperSelect extends Component {
                 borderColor: 'transparent',
                 padding: '5px 15px',
                 fontFamily: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
-                width: "12%",
+                width: "25%",
                 borderRadius: '4px',
                 fontWeight: 'bold',
                 letterSpacing: '0.02857em',
-                textTransform: 'uppercase'
+                textTransform: 'uppercase',
+                outline: 'none',
+                cursor: 'pointer'
             },
             optionsSelect: ['Bmw', 'Audi', 'Ferrari', 'Volskwagen', 'Mazda', 'Toyota', 'Nissan', 'Porshe'],
             options: [
                 {
                     name: 'Normal',
-                    option: '50%',
+                    option: '25%',
                 },
                 {
                     name: 'Small',
-                    option: '30%',
+                    option: '12%',
                 },
                 {
                     name: 'Medium',
-                    option: '70%',
+                    option: '75%',
                 },
                 {
                     name: 'Large',

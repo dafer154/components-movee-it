@@ -4,7 +4,7 @@ import CustomInput from "../CustomInput/CustomInput";
 class WrapperInputNumber extends Component {
 
     state = {
-        treeTextButton: [{
+        treeInputNumber: [{
             option: 'types',
             title: 'Input Number Types',
             component: 'inputNumber',
@@ -74,11 +74,11 @@ class WrapperInputNumber extends Component {
             options: [
                 {
                     name: 'Available',
-                    option: false
+                    option: 'Available'
                 },
                 {
                     name: 'Disabled',
-                    option: true
+                    option: 'Disabled'
                 },
             ]
         },
@@ -248,10 +248,10 @@ class WrapperInputNumber extends Component {
         return (
             <div>
                 <div className="titleComponent">Component Input Number</div>
-                {this.state.treeTextButton.map((inputText, i) => (
+                {this.state.treeInputNumber.map((inputNumber, i) => (
                     <CustomInput
                         key={i}
-                        {...inputText}
+                        {...inputNumber}
                     />
                 ))}
             </div>

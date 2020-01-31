@@ -22,7 +22,9 @@ class WrapperButtons extends Component {
                 borderRadius: '4px',
                 fontWeight: 'bold',
                 letterSpacing: '0.02857em',
-                textTransform: 'uppercase'
+                textTransform: 'uppercase',
+                outline: 'none',
+                cursor: 'pointer'
             },
             options: [
                 {
@@ -66,7 +68,9 @@ class WrapperButtons extends Component {
                 borderRadius: '4px',
                 fontWeight: 'bold',
                 letterSpacing: '0.02857em',
-                textTransform: 'uppercase'
+                textTransform: 'uppercase',
+                outline: 'none',
+                cursor: 'pointer'
             },
 
             options: [
@@ -110,7 +114,9 @@ class WrapperButtons extends Component {
                 borderRadius: '4px',
                 fontWeight: 'bold',
                 letterSpacing: '0.02857em',
-                textTransform: 'uppercase'
+                textTransform: 'uppercase',
+                outline: 'none',
+                cursor: 'pointer'
             },
             options: [
                 {
@@ -153,7 +159,9 @@ class WrapperButtons extends Component {
                 borderRadius: '4px',
                 fontWeight: 'bold',
                 letterSpacing: '0.02857em',
-                textTransform: 'uppercase'
+                textTransform: 'uppercase',
+                outline: 'none',
+                cursor: 'pointer'
             },
             options: [
                 {

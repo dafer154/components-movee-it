@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import './style/SelectInput.css';
+import RadioButtons from '../Options/RadioButton';
+import { convertColorBorder } from '../Utils';
 
 class SelectInput extends Component {
     constructor(props) {
@@ -18,11 +20,40 @@ class SelectInput extends Component {
                 border: props.style.border,
                 fontWeight: props.style.fontWeight,
                 letterSpacing: props.style.letterSpacing,
-                textTransform: props.style.textTransform
+                textTransform: props.style.textTransform,
+                outline: props.style.outline,
+                cursor: props.style.cursor
             },
             valueLabel: props.valueLabel,
             optionsSelect: props.optionsSelect
         };
+    }
+
+    callBackFunction = (childData, type, label) => {
+        switch (type) {
+            case 'color':
+                return this.setState({
+                    styleButton: { ...this.state.styleButton, backgroundColor: childData },
+                    valueLabel: label
+                })
+            case 'size':
+                return this.setState({
+                    styleButton: { ...this.state.styleButton, width: childData },
+                    valueLabel: label
+                });
+            case 'textButton':
+                return this.setState({
+                    styleButton: { ...this.state.styleButton, color: childData },
+                    valueLabel: label
+                });
+            case 'outlineButton':
+                return this.setState({
+                    styleButton: { ...this.state.styleButton, border: convertColorBorder(childData), color: childData },
+                    valueLabel: label
+                });
+            default:
+                break;
+        }
     }
 
     render() {
@@ -32,7 +63,7 @@ class SelectInput extends Component {
             color: `${this.state.styleButton.color}`,
             backgroundColor: `${this.state.styleButton.backgroundColor}`,
             border: `${this.state.styleButton.border}`,
-            padding: "10px",
+            padding: `${this.state.styleButton.padding}`,
             fontFamily: `${this.state.styleButton.fontFamily}`,
             width: `${this.state.styleButton.width}`,
             borderColor: `${this.state.styleButton.borderColor}`,
@@ -40,10 +71,13 @@ class SelectInput extends Component {
             fontWeight: `${this.state.styleButton.fontWeight}`,
             letterSpacing: `${this.state.styleButton.letterSpacing}`,
             textTransform: `${this.state.styleButton.textTransform}`,
+            outline: `${this.state.styleButton.outline}`,
+            cursor: `${this.state.styleButton.cursor}`
         }
 
         const { optionsSelect } = this.state
-        const { title, description } = this.state.properties
+        const { title, description, option, options, typeComponent } = this.state.properties
+        const { callBackFunction } = this
 
         return (
             <div>
@@ -57,6 +91,13 @@ class SelectInput extends Component {
                             })}
                         </select>
                     </div>
+                    <RadioButtons
+                        key={option}
+                        options={options}
+                        type={option}
+                        changeOption={callBackFunction}
+                        typeComponent={typeComponent}
+                    />
                 </div>
             </div>
         );
