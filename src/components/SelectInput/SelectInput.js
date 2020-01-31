@@ -25,7 +25,8 @@ class SelectInput extends Component {
                 cursor: props.style.cursor
             },
             valueLabel: props.valueLabel,
-            optionsSelect: props.optionsSelect
+            optionsSelect: props.optionsSelect,
+            disabled: props.disabled
         };
     }
 
@@ -41,16 +42,12 @@ class SelectInput extends Component {
                     styleButton: { ...this.state.styleButton, width: childData },
                     valueLabel: label
                 });
-            case 'textButton':
-                return this.setState({
-                    styleButton: { ...this.state.styleButton, color: childData },
-                    valueLabel: label
-                });
-            case 'outlineButton':
-                return this.setState({
-                    styleButton: { ...this.state.styleButton, border: convertColorBorder(childData), color: childData },
-                    valueLabel: label
-                });
+            case 'disabled':
+                if (childData === "Available") {
+                    return this.setState({ disabled: false });
+                } else {
+                    return this.setState({ disabled: true });
+                }
             default:
                 break;
         }
@@ -75,7 +72,7 @@ class SelectInput extends Component {
             cursor: `${this.state.styleButton.cursor}`
         }
 
-        const { optionsSelect } = this.state
+        const { optionsSelect, disabled } = this.state
         const { title, description, option, options, typeComponent } = this.state.properties
         const { callBackFunction } = this
 
@@ -85,7 +82,7 @@ class SelectInput extends Component {
                     <div className="title">{title}</div>
                     <div className="description">{description}</div>
                     <div className="wrappButton">
-                        <select style={mystyle}>
+                        <select style={mystyle} disabled={disabled}>
                             {optionsSelect.map((option, i) => {
                                 return <option key={i} value={option}>{option}</option>
                             })}

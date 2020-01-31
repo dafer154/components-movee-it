@@ -17,7 +17,7 @@ In this component you can change some properties how: size, color, type, outline
 In this component you can change some properties how: size, color, type, disabled
 
 ## Select Input
-In this component you can change some properties how: size, color
+In this component you can change some properties how: size, color, disabled
 
 The url is: https://dafer154.github.io/components-movee-it/#/
 

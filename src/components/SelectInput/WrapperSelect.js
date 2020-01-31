@@ -9,8 +9,9 @@ class WrapperSelect extends Component {
             option: 'color',
             typeComponent: 'select',
             title: 'Styles Select Input',
-            description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
+            description: 'Change the different styles of a Select input',
             valueLabel: 'Primary',
+            disabled: false,
             style: {
                 fontSize: '0.875rem',
                 backgroundColor: "#e3165b",
@@ -55,13 +56,14 @@ class WrapperSelect extends Component {
             option: 'size',
             title: 'Size Select Input',
             typeComponent: 'select',
-            description: 'loremIpsum',
+            description: 'Allows you to change the different sizes to a Select input',
             valueLabel: 'Normal',
+            disabled: false,
             style: {
                 fontSize: '0.875rem',
-                color: "white",
-                backgroundColor: "DodgerBlue",
-                borderColor: 'transparent',
+                color: "black",
+                backgroundColor: "white",
+                borderColor: 'black',
                 padding: '5px 15px',
                 fontFamily: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
                 width: "25%",
@@ -90,6 +92,41 @@ class WrapperSelect extends Component {
                     name: 'Large',
                     option: '100%',
                 }
+            ]
+        },
+
+        {
+            option: 'disabled',
+            title: 'Disabled Select Input',
+            typeComponent: 'select',
+            description: 'Enable or disable an Select input',
+            valueLabel: 'Normal',
+            disabled: false,
+            style: {
+                fontSize: '0.875rem',
+                color: "black",
+                backgroundColor: "white",
+                borderColor: 'black',
+                padding: '5px 15px',
+                fontFamily: 'font-family: "Roboto", "Helvetica", "Arial", sans-serif',
+                width: "25%",
+                borderRadius: '4px',
+                fontWeight: 'bold',
+                letterSpacing: '0.02857em',
+                textTransform: 'uppercase',
+                outline: 'none',
+                cursor: 'pointer'
+            },
+            optionsSelect: ['Audi', 'Bmw', 'Ferrari', 'Volskwagen', 'Mazda', 'Toyota', 'Nissan', 'Porshe'],
+            options: [
+                {
+                    name: 'Available',
+                    option: 'Available'
+                },
+                {
+                    name: 'Disabled',
+                    option: 'Disabled'
+                },
             ]
         }
         ]
