@@ -9,10 +9,9 @@ class Home extends Component {
             <div>
                 <div className="titleComponent">Project Components Movee-it</div>
                 <div>
-                    <img src={Logo} />
+                    <img src={Logo} alt={"logo"} />
                 </div>
             </div>
-
         );
     }
 }

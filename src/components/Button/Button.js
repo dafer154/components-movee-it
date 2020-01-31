@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import RadioButtons from "../Options/RadioButton";
 import "./style/Button.css";
+import PropTypes from 'prop-types';
 import { convertColorBorder } from '../Utils';
 
 class Button extends Component {
@@ -90,6 +91,12 @@ class Button extends Component {
             </div>
         );
     }
+
 }
+
+Button.propTypes = {
+    fontSize: PropTypes.string
+};
+
 
 export default Button;

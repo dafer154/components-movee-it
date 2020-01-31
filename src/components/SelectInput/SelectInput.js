@@ -43,7 +43,7 @@ class SelectInput extends Component {
         }
 
         const { optionsSelect } = this.state
-        const { title, description, option, options, typeComponent } = this.state.properties
+        const { title, description } = this.state.properties
 
         return (
             <div>

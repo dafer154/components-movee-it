@@ -114,6 +114,7 @@ class Autocomplete extends Component {
         return (
             <div className="wrappAutocomplete">
                 <div className="titleComponent">Autocomplete</div>
+                <div className="description">Autocomplete with a array of cars</div>
                 <div className="container wrappAutocomplete">
                     <input className="autocompleteStyle"
                         type="text"

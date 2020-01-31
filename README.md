@@ -1,3 +1,26 @@
+## Component movee-it
+
+This project was create how test, for entry to the company moove-it, it is a demo for visualizate the differents componentes, how you change your properties  
+
+These components are:
+
+## Button
+In this component you can change some properties how: size, color, type, outline
+
+## Autocomplete
+In this component you can autocomplete a differents brands to cars
+
+## Input Number
+In this component you can change some properties how: size, color, type, outline, disabled, maxLength, float
+
+## Input Text
+In this component you can change some properties how: size, color, type, disabled
+
+## Select Input
+In this component you can change some properties how: size, color
+
+The url is: https://dafer154.github.io/components-movee-it/#/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

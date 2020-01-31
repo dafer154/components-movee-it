@@ -9,7 +9,7 @@ class WrapperButtons extends Component {
             option: 'color',
             typeComponent: 'button',
             title: 'Button styles',
-            description: 'Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.',
+            description: 'Change the different styles of a button',
             valueLabel: 'Primary',
             style: {
                 fontSize: '0.875rem',
@@ -52,7 +52,7 @@ class WrapperButtons extends Component {
             option: 'textButton',
             title: 'Text Button',
             typeComponent: 'button',
-            description: 'loremIpsum',
+            description: 'Change the labels and colors of a button, without background',
             valueLabel: 'Primary',
             style: {
                 fontSize: '0.875rem',
@@ -97,7 +97,7 @@ class WrapperButtons extends Component {
             option: 'outlineButton',
             title: 'Outline Button',
             typeComponent: 'button',
-            description: 'loremIpsum',
+            description: 'Change the borders and colors of a button, without background',
             valueLabel: 'Primary',
             style: {
                 fontSize: '0.875rem',
@@ -140,7 +140,7 @@ class WrapperButtons extends Component {
             option: 'size',
             title: 'Size Button',
             typeComponent: 'button',
-            description: 'loremIpsum',
+            description: 'Allows you to change the different sizes to a button',
             valueLabel: 'Normal',
             style: {
                 fontSize: '0.875rem',
@@ -184,6 +184,7 @@ class WrapperButtons extends Component {
                 {this.state.treeButton.map((button, i) => (
                     <Button
                         key={i}
+                        style={button.style}
                         {...button}
                     />
                 ))}
