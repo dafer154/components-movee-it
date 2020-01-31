@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import './style/SelectInput.css';
 import RadioButtons from '../Options/RadioButton';
-import { convertColorBorder } from '../Utils';
 
 class SelectInput extends Component {
     constructor(props) {
