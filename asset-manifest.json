@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/components-movee-it/static/css/main.13d60236.chunk.css",
-    "main.js": "/components-movee-it/static/js/main.e4169477.chunk.js",
-    "main.js.map": "/components-movee-it/static/js/main.e4169477.chunk.js.map",
+    "main.js": "/components-movee-it/static/js/main.c1edf931.chunk.js",
+    "main.js.map": "/components-movee-it/static/js/main.c1edf931.chunk.js.map",
     "runtime-main.js": "/components-movee-it/static/js/runtime-main.89140a4d.js",
     "runtime-main.js.map": "/components-movee-it/static/js/runtime-main.89140a4d.js.map",
     "static/js/2.5206eca4.chunk.js": "/components-movee-it/static/js/2.5206eca4.chunk.js",
     "static/js/2.5206eca4.chunk.js.map": "/components-movee-it/static/js/2.5206eca4.chunk.js.map",
     "index.html": "/components-movee-it/index.html",
-    "precache-manifest.14a58e5210a2af07a165acbce06028c4.js": "/components-movee-it/precache-manifest.14a58e5210a2af07a165acbce06028c4.js",
+    "precache-manifest.b29d708209e90379f005de79dcf54efc.js": "/components-movee-it/precache-manifest.b29d708209e90379f005de79dcf54efc.js",
     "service-worker.js": "/components-movee-it/service-worker.js",
     "static/css/main.13d60236.chunk.css.map": "/components-movee-it/static/css/main.13d60236.chunk.css.map",
     "static/js/2.5206eca4.chunk.js.LICENSE": "/components-movee-it/static/js/2.5206eca4.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.89140a4d.js",
     "static/js/2.5206eca4.chunk.js",
     "static/css/main.13d60236.chunk.css",
-    "static/js/main.e4169477.chunk.js"
+    "static/js/main.c1edf931.chunk.js"
   ]
 }
